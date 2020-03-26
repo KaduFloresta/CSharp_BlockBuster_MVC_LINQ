@@ -60,44 +60,20 @@ namespace View
         }
 
         //Teste Consulta LINQ
-        public static void ConsultarLocacaoLINQ()
-            {
-                Console.WriteLine ("Digite o ID da Locação: ");
-                int idLocacao = Convert.ToInt32(Console.ReadLine());
+        public static void ConsultarLocacao()
+        {
+            Console.WriteLine ("Digite o ID da Locação: ");
+            int idLocacao = Convert.ToInt32(Console.ReadLine());
+            
                 IEnumerable query =
                 from locacao in LocacaoController.GetLocacaoModels()
                 where locacao.IdLocacao == idLocacao
-                select locacao;
+                select locacao.ToString();
 
-                foreach (string locacoes in query)
-                    {
-                        Console.WriteLine(locacoes);
-                    }
-            }
-
-
-        // Consulta Locação pelo ID
-        public static void ConsultarLocacao () 
-        {
-            LocacaoModels locacao;
-
-            do {
-                Console.WriteLine ("Digite o ID da Locação: ");;
-                int idLocacao = Convert.ToInt32 (Console.ReadLine ());
-                locacao = null;
-
-                
-                try {
-                    locacao = LocacaoController.GetLocacao(idLocacao);
-                    if (locacao == null) 
-                    {
-                        Console.WriteLine ("LOCAÇÃO NÃO LOCALIZADA!");
-                    }
-                } catch {
-                    Console.WriteLine ("LOCAÇÃO NÃO LOCALIZADA!");
+            foreach (string locacoes in query)
+                {
+                    Console.WriteLine(locacoes.ToString());
                 }
-            } while (locacao == null);
-            Console.WriteLine (locacao.ToString ());
-        }
+        }        
     }
 }

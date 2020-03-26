@@ -26,45 +26,20 @@ namespace View
             }  
 
         //Teste Consulta LINQ
-        public static void ConsultarFilmeLINQ()
-            {
-                Console.WriteLine ("Digite o ID do Filme: ");
-                int idFilme = Convert.ToInt32(Console.ReadLine());
+        public static void ConsultarFilme()
+        {
+            Console.WriteLine ("Digite o ID do Filme: ");
+            int idFilme = Convert.ToInt32(Console.ReadLine());
+
                 IEnumerable query =
                 from filme in FilmeController.GetFilmes()
                 where filme.IdFilme == idFilme
-                select filme.Titulo;
+                select filme.ToString();
 
-                foreach (string filmes in query)
-                    {
-                        Console.WriteLine(filmes);
-                    }
-            }
-
-            // Consulta Filme pelo ID
-        public static void ConsultarFilme()
-        {
-            FilmeModels filme;
-            do
-            {
-                Console.WriteLine("Digite o ID do Filme: ");
-                int idFilme = Convert.ToInt32(Console.ReadLine());
-                filme = null;
-
-                try
+            foreach (string filmes in query)
                 {
-                    filme = FilmeController.GetFilme(idFilme);
-                    if (filme == null)
-                    {
-                        Console.WriteLine("FILME NÃOLOCALIZADO!");
-                    }
+                    Console.WriteLine(filmes.ToString());
                 }
-                catch
-                {
-                    Console.WriteLine("FILME NÃOLOCALIZADO!");
-                }
-            } while (filme == null);
-            Console.WriteLine(filme.ToString());
-        }      
+        }
     }
 }

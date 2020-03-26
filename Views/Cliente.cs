@@ -26,46 +26,20 @@ namespace View
             }  
 
         // Teste Consulta LINQ
-        public static void ConsultarClienteLINQ ()
-        {
-            
-                Console.WriteLine ("Digite o ID do Cliente: ");
-                int idCliente = Convert.ToInt32(Console.ReadLine());
-                
-                IEnumerable query =
-                    from cliente in ClienteController.GetClientes()
-                    where cliente.IdCliente == idCliente
-                    select cliente.NomeCliente;
-
-                    foreach(string cliente in query)
-                        {
-                            Console.WriteLine(cliente);
-                        }
-        }
-
-        //Consulta Cliente pelo ID
         public static void ConsultarCliente ()
-        {
-            ClienteModels cliente;           
-            do 
-            {
-                Console.WriteLine ("Digite o ID do CLiente: ");
-                int idCliente = Convert.ToInt32 (Console.ReadLine ());
-                cliente = null;
+        {               
+            Console.WriteLine ("Digite o ID do Cliente: ");
+            int idCliente = Convert.ToInt32(Console.ReadLine());
+            
+                IEnumerable query =
+                from cliente in ClienteController.GetClientes()
+                where cliente.IdCliente == idCliente
+                select cliente.ToString();
 
-                try 
+            foreach (string cliente in query)
                 {
-                    cliente = ClienteController.GetCliente(idCliente);
-                    if (cliente == null) 
-                        { 
-                            Console.WriteLine ("CLIENTE NÃO LOCALIZADO!");
-                        }
-                } catch 
-                    {
-                        Console.WriteLine ("CLIENTE NÃO LOCALIZADO!");
-                    }
-            } while (cliente == null);
-            Console.WriteLine (cliente.ToString ());
+                    Console.WriteLine(cliente.ToString()); 
+                }                                            
         }
     }
 }
