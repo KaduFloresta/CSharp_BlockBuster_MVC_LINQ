@@ -21,8 +21,8 @@ namespace View
         // Relação de Filmes da Lista
         public static void ListarFilmes()
             {
-                Console.WriteLine ("---===[ LISTA DE FILMES ]===---");
-                 FilmeController.GetFilmes().ForEach(filme => Console.WriteLine(filme));
+                Console.WriteLine ("=====================[ LISTA DE FILMES ]===============================================================================================");
+                FilmeController.GetFilmes().ForEach(filme => Console.WriteLine(filme));
             }  
 
         //Teste Consulta LINQ
@@ -38,6 +38,7 @@ namespace View
 
             foreach (string filmes in query)
                 {
+                    Console.WriteLine("=====================[ CONSULTA FILMES ]===============================================================================================");
                     Console.WriteLine(filmes.ToString());
                 }
         }

@@ -48,7 +48,7 @@ namespace Models
         // Impressão Dados do Filme
         public override string ToString() 
             {
-                return  $"\n------------------------===[ FILME ]===-------------------------------------------------------------------------------------------------\n" +
+                return  $"------------------------===[ FILME ]===------------------------------------------------------------------------------------------------\n" +
                         $"--> Nº ID DO FILME: {IdFilme}\n" + 
                         $"-> TÍTULO: {Titulo}\n" + 
                         $"-> DATA DE LANÇAMENTO: {DataLancamento}\n" + 
@@ -56,7 +56,7 @@ namespace Models
                         $"-> VALOR DA LOCAÇÃO: {ValorLocacaoFilme.ToString("C")}\n" + 
                         $"-> QTDE EM ESTOQUE: {EstoqueFilme}\n" + 
                         $"-> QTDE DE LOCAÇÕES REALIZADAS: {FilmeLocado}\n" + 
-                        $"----------------------------------------------------------------------------------------------------------------------------------------";
+                        $"---------------------------------------------------------------------------------------------------------------------------------------";
             }
 
         // Retorno da Lista de Filmes

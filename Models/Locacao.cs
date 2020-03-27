@@ -34,12 +34,13 @@ namespace Models
 		// Informações da Locação
 		public override string ToString() 
 			{
-				string retorno = $"----------------===[ DADOS LOCAÇÃO ]===----------------\n" +
-					Cliente +
+				string retorno = Cliente + 
+					$"\n----------------===[ DADOS LOCAÇÃO ]===----------------\n" +
 					$"-> PREÇO TOTAL DAS LOCAÇÕES: R$ {LocacaoController.PrecoTotalLocaçoes(filmes)}\n" +
 					$"-> DATA DE DEVOLUÇÃO: {LocacaoController.calculoDataDevolucao(DataLocacao)}\n" +
 					$"-> QTDE TOTAL DE FILMES LOCADOS: {LocacaoController.TotalFilmes(filmes)}\n" +
-					$"-------------------------------------------------------\n";
+					$"-------------------------------------------------------\n\n" +
+					$"=======================[ FILMES LOCADOS ]==============================================================================================";
 				
 				foreach (FilmeModels filme in filmes)
 					{
@@ -50,7 +51,7 @@ namespace Models
 			}
 
 		// Retorno da Lista de Locações
-		public static List<LocacaoModels> GetLocacaoModels() 
+		public static List<LocacaoModels> GetLocacao() 
 			{
 				return LocacaoRepositories.Locacoes();
 			}

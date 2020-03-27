@@ -48,7 +48,7 @@ namespace Models
 						$"-> DATA DE NASCIMENTO: {DataNascimento}\n" +
 						$"-> CPF: {CpfCliente}\n" +
 						$"-> DIAS P/ DEVOLUÇÃO: {DiasDevolucao}\n" +
-						$"-------------------------------------------------------\n";
+						$"-------------------------------------------------------";
 			}
 			
 		// Adição de Locações

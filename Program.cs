@@ -35,7 +35,7 @@ namespace Locadora_MVC_LinQ
 			  Console.WriteLine("| 7 >>> Listar Locações           |");			  
 			  Console.WriteLine("| 0 >>> SAIR                      |");			  
               Console.WriteLine("|---------------------------------|");
-			  Console.WriteLine("|*********************************|\n");
+			  Console.WriteLine("|*********************************|");
 
 			  Console.WriteLine("\nDigite a Opção: ");
 				try

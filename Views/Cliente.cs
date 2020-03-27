@@ -21,7 +21,7 @@ namespace View
         // Relação de Clientes da Lista
         public static void ListarClientes()
             {
-                Console.WriteLine ("---===[ LISTA DE CLIENTES ]===---");
+                Console.WriteLine ("=================[ LISTA DE CLIENTES ]=================");
                 ClienteController.GetClientes().ForEach(filme => Console.WriteLine(filme));
             }  
 
@@ -38,6 +38,7 @@ namespace View
 
             foreach (string cliente in query)
                 {
+                    Console.WriteLine("=================[ CONSULTA CLIENTE ]==================");
                     Console.WriteLine(cliente.ToString()); 
                 }                                            
         }
