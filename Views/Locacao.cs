@@ -17,7 +17,8 @@ namespace View
         // Listando os CLientes da Lista
         public static void ListarLocacao()
         {     
-            List<LocacaoModels> locacoes = LocacaoController.GetLocacaoModels();
+            Console.WriteLine("\n===================[ LISTA LOCAÇÕES ]==================");
+            List<LocacaoModels> locacoes = LocacaoController.GetLocacao();
 
             locacoes.ForEach(locacao => Console.WriteLine(locacao));
         }
@@ -66,12 +67,13 @@ namespace View
             int idLocacao = Convert.ToInt32(Console.ReadLine());
             
                 IEnumerable query =
-                from locacao in LocacaoController.GetLocacaoModels()
+                from locacao in LocacaoController.GetLocacao()
                 where locacao.IdLocacao == idLocacao
                 select locacao.ToString();
 
             foreach (string locacoes in query)
                 {
+                    Console.WriteLine("\n=================[ CONSULTA LOCAÇÕES ]=================");
                     Console.WriteLine(locacoes.ToString());
                 }
         }        

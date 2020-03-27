@@ -22,7 +22,7 @@ namespace Controllers
 						ValorTotal += filme.ValorLocacaoFilme;
 					}
 
-                return ValorTotal;
+                return Math.Round(ValorTotal,2);
 			}
 
 		// Calculo Data de Devolução
@@ -39,9 +39,9 @@ namespace Controllers
 			}
 
 		// Retorno da Lista de Locações
-        public static List<LocacaoModels> GetLocacaoModels()
+        public static List<LocacaoModels> GetLocacao()
 			{
-				return LocacaoModels.GetLocacaoModels();
+				return LocacaoModels.GetLocacao();
 			}
 
 		// Retorno da Locação pelo ID
